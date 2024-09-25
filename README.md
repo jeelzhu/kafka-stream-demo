@@ -20,12 +20,12 @@ Features
 Build the Project
 
 Use Maven to build the project:
-mvn clean install
+`mvn clean install`
 
 Run the Application
 
 Run the Spring Boot application:
-mvn spring-boot:run
+`mvn spring-boot:run`
 
 Configuration
 
@@ -34,7 +34,7 @@ All configurations for Kafka and other settings are managed through the applicat
 Testing
 
 Unit tests for the Kafka Streams topology can be written using the TopologyTestDriver. To run the tests:
-mvn test
+`mvn test`
 
 Contact
 
