@@ -9,7 +9,10 @@ import org.slf4j.LoggerFactory;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
-
+/*
+ * This class is used to handle exceptions that occur during the production of records to a Kafka topic.
+ * It logs the exception and the record details to the console.
+ */
 public class LogMessageHandler implements ProductionExceptionHandler {
     private static final Logger logger = LoggerFactory.getLogger(LogMessageHandler.class);
     private final ObjectMapper objectMapper = new ObjectMapper();

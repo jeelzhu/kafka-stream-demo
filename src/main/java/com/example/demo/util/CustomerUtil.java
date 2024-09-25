@@ -1,32 +1,32 @@
 package com.example.demo.util;
 
 import com.example.demo.entity.Customer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 import java.time.Period;
 
 public class CustomerUtil {
+    private static final Logger logger = LoggerFactory.getLogger(CustomerUtil.class);
+
     public static boolean isValidCustomer(Customer customer) {
         if (customer == null) {
-            System.err.println("Received null customer");
+            logger.error("Received null customer");
             return false;
         }
-
         if (customer.firstName() == null || customer.firstName().trim().isEmpty()) {
-            System.err.println("Invalid customer first name: " + customer);
+            logger.error("Invalid customer first name: {}", customer);
             return false;
         }
-
         if (customer.lastName() == null || customer.lastName().trim().isEmpty()) {
-            System.err.println("Invalid customer last name: " + customer);
+            logger.error("Invalid customer last name: {}", customer);
             return false;
         }
-
         if (customer.dateOfBirth() == null || customer.dateOfBirth().isAfter(LocalDate.now())) {
-            System.err.println("Invalid customer DOB: " + customer);
+            logger.error("Invalid customer DOB: {}", customer);
             return false;
         }
-
         return true;
     }
 
@@ -35,7 +35,7 @@ public class CustomerUtil {
             int age = Period.between(customer.dateOfBirth(), LocalDate.now()).getYears();
             return age % 2 == 0;
         } catch (Exception e) {
-            System.err.println("Error calculating age for customer: " + customer + ", Error: " + e.getMessage());
+            logger.error("Error calculating age for customer: " + customer + ", Error: " + e.getMessage());
             return false;
         }
     }

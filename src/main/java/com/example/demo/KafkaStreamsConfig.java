@@ -13,6 +13,9 @@ import org.springframework.kafka.config.KafkaStreamsConfiguration;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * This class is used to configure the Kafka Streams application.
+ */
 @Configuration
 @EnableKafkaStreams
 public class KafkaStreamsConfig {

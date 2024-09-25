@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-
 import com.example.demo.entity.Customer;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.*;
@@ -44,9 +43,7 @@ public class KafkaStreamsServiceTest {
         kafkaStreamsService.inputTopic = INPUT_TOPIC;
         kafkaStreamsService.evenTopic = EVEN_TOPIC;
         kafkaStreamsService.oddTopic = ODD_TOPIC;
-
         kafkaStreamsService.kStream(streamsBuilder);
-
         Topology topology = streamsBuilder.build();
 
         // Initialize the test driver
