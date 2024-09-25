@@ -9,6 +9,19 @@ Assumptions
 	•	input-topic: The topic from which customer data is read.
 	•	CustomerEVEN: The topic where customer data with even ages is sent.
 	•	CustomerODD: The topic where customer data with odd ages is sent.
+	
+Payload Structure
+
+The `input-topic` expects messages with the following JSON structure:
+
+```json
+{
+  "firstName": "Alan",
+  "lastName": "Smith",
+  "dateOfBirth": "1990-01-01"
+}
+```
+
 
 Features
 
