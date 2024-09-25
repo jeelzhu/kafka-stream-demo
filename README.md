@@ -2,6 +2,14 @@ Overview
 
 This project is a Spring Boot application that leverages Kafka Streams to process and route customer data based on specific conditions. The application reads customer data from an input Kafka topic, processes the data to determine whether a customer’s age is even or odd, and then routes the data to corresponding Kafka topics (customerEven, customerOdd). Invalid data is handled separately.
 
+Assumptions
+
+	•	Kafka Cluster: The application assumes that there is a Kafka cluster running and accessible at the configured bootstrap server address.
+	•	Kafka Topics: The application assumes that the following Kafka topics already exist:
+	•	input-topic: The topic from which customer data is read.
+	•	CustomerEVEN: The topic where customer data with even ages is sent.
+	•	CustomerODD: The topic where customer data with odd ages is sent.
+
 Features
 
 	•	Stream Processing: Real-time processing of customer data using Kafka Streams.
