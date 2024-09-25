@@ -1,6 +1,6 @@
 Overview
 
-This project is a Spring Boot application that leverages Kafka Streams to process and route customer data based on specific conditions. The application reads customer data from an input Kafka topic, processes the data to determine whether a customer’s age is even or odd, and then routes the data to corresponding Kafka topics (evenTopic, oddTopic). Invalid data is handled separately.
+This project is a Spring Boot application that leverages Kafka Streams to process and route customer data based on specific conditions. The application reads customer data from an input Kafka topic, processes the data to determine whether a customer’s age is even or odd, and then routes the data to corresponding Kafka topics (customerEven, customerOdd). Invalid data is handled separately.
 
 Features
 
@@ -8,3 +8,26 @@ Features
 	•	Conditional Routing: Routes customer data to different Kafka topics based on age.
 	•	Error Handling: Logs and optionally processes invalid customer data.
 	•	Configurable Topics: Kafka topics are configurable through external properties.
+	•	Testing: The Kafka Streams topology can be tested using TopologyTestDriver for unit testing, ensuring the processing logic works correctly before deployment.
+Build the Project
+
+Use Maven to build the project:
+mvn clean install
+
+Run the Application
+
+Run the Spring Boot application:
+mvn spring-boot:run
+
+Configuration
+
+All configurations for Kafka and other settings are managed through the application.properties 
+
+Testing
+
+Unit tests for the Kafka Streams topology can be written using the TopologyTestDriver. To run the tests:
+mvn test
+
+Contact
+
+For questions or support, please contact jeelzhu@gmail.com.
