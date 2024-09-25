@@ -3,5 +3,6 @@ target/
 *.log
 .idea/
 .settings/
+.vscode/
 .classpath
 .project
