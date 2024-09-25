@@ -63,7 +63,7 @@ public class KafkaStreamsServiceTest {
 
     @Test
     public void testValidEvenCustomer() {
-        Customer customer = new Customer("Elon", "Musk", LocalDate.of(1970, 1, 1));
+        final Customer customer = new Customer("Elon", "Musk", LocalDate.of(1970, 1, 1));
         inputTopic.pipeInput("key1", customer);
 
         // Assert that the customer is routed to the even topic
@@ -77,7 +77,7 @@ public class KafkaStreamsServiceTest {
 
     @Test
     public void testValidOddCustomer() {
-        Customer customer = new Customer("Jeff", "Bezos", LocalDate.of(1971, 1, 1));
+        final Customer customer = new Customer("Jeff", "Bezos", LocalDate.of(1971, 1, 1));
         inputTopic.pipeInput("key2", customer);
 
         // Assert that the customer is routed to the odd topic
@@ -91,7 +91,7 @@ public class KafkaStreamsServiceTest {
 
     @Test
     public void testInvalidCustomer() {
-        Customer customer = new Customer("aaa", "unknown", null);
+        final Customer customer = new Customer("aaa", "unknown", null);
         inputTopic.pipeInput("key3", customer);
 
         // Assert that the customer is not routed to any output topic
