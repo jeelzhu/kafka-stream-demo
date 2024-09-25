@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.config;
 
 import com.example.demo.handler.LogMessageHandler;
 import org.apache.kafka.streams.StreamsConfig;
